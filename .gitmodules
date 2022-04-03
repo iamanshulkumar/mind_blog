@@ -1,0 +1,4 @@
+[submodule "mindPalace_Blog/public"]
+	path = mindPalace_Blog/public
+	url = https://github.com/iamanshulkumar/mindpalace.github.io.git
+	branch = main
