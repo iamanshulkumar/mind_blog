@@ -1,52 +1,139 @@
-baseURL = 'https://mindpalace.github.io/'
-languageCode = 'en-us'
-title = 'My Mind Palace'
-theme="hello-friend-ng"
-paginate     = 10
+baseURL = "http://example.org/"
+# [en, zh-cn, fr, ...] determines default content language
+defaultContentLanguage = "en"
+# language code
+languageCode = "en"
+title = "My New Hugo Site"
+
+# Change the default theme to be use when building the site with Hugo
+theme = "Doit"
 
 [params]
-  dateform        = "Jan 2, 2006"
-  dateformShort   = "Jan 2"
-  dateformNum     = "2006-01-02"
-  dateformNumTime = "2006-01-02 15:04"
+  # DoIt theme version
+  version = "0.2.X"
 
-  # Subtitle for home
-  homeSubtitle = "A simple and beautiful blog"
-
-  # Set disableReadOtherPosts to true in order to hide the links to other posts.
-  disableReadOtherPosts = false
-
-  # Enable sharing buttons, if you like
-  enableSharingButtons = true
-
-  # Metadata mostly used in document's head
-  description = "My new homepage or blog"
-  keywords = "homepage, blog"
-  images = [""]
-
-[taxonomies]
-    category = "blog"
-    tag      = "tags"
-    series   = "series"
-
-[languages]
-  [languages.en]
-    title = "Welcome to Mind Palace!"
-    subtitle = "A simple theme for Hugo"
-    keywords = ""
-    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-    readOtherPosts = "Read other posts"
-
-    [languages.en.params.logo]
-      logoText = "Mind Palace"
-      logoHomeLink = "/"
-    # or
-    #
-    # path = "/img/your-example-logo.svg"
-    # alt = "Your example logo alt text"
-
-  # And you can even create generic menu
+[menu]
   [[menu.main]]
-    identifier = "blog"
-    name       = "Blog"
-    url        = "/posts"
+    identifier = "posts"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    name = "Posts"
+    url = "/posts/"
+    # title will be shown when you hover on this menu link
+    title = ""
+    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    pre = ""
+    post = ""
+    name = "Tags"
+    url = "/tags/"
+    title = ""
+    weight = 2
+  [[menu.main]]
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "Categories"
+    url = "/categories/"
+    title = ""
+    weight = 3
+
+# Markup related configuration in Hugo
+[markup]
+  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
+  [markup.highlight]
+    # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses = false
+
+ # Home page config
+  [params.home]
+    # DoIt NEW | 0.2.0 amount of RSS pages
+    rss = 10
+    # Home page profile
+    [params.home.profile]
+      enable = true
+      # Gravatar Email for preferred avatar in home page
+      gravatarEmail = ""
+      # URL of avatar shown in home page
+      # Place your avatar file under static or assets directory
+      # The filepath is relative to the static or assets directory
+      avatarURL = "/images/avatar.webp"
+      # DoIt CHANGED | 0.2.7 title shown in home page (HTML format is supported)
+      title = ""
+      # subtitle shown in home page
+      subtitle = "This is My New Hugo Site"
+      # whether to use typeit animation for subtitle
+      typeit = true
+      # whether to show social links
+      social = true
+      # DoIt NEW | 0.2.0 disclaimer (HTML format is supported)
+      disclaimer = ""
+    # Home page posts
+    [params.home.posts]
+      enable = true
+      # special amount of posts in each home posts page
+      paginate = 6
+      # DoIt DELETED | 0.2.0 replaced with hiddenFromHomePage in params.page
+      # default behavior when you don't set "hiddenFromHomePage" in front matter
+      defaultHiddenFromHomePage = false
+
+  # Social config about the author
+  [params.social]
+    GitHub = "xxxx"
+    Linkedin = "XXXX"
+    Twitter = "xxxx"
+    Instagram = "xxxx"
+    
+    
+
+# Header config
+  [params.header]
+    # desktop header mode ("fixed", "normal", "auto")
+    desktopMode = "fixed"
+    # mobile header mode ("fixed", "normal", "auto")
+    mobileMode = "auto"
+    # DoIt NEW | 0.2.11 Theme change mode
+    # theme change mode ("switch", "select")
+    themeChangeMode = "switch"
+    # DoIt NEW | 0.2.0 Header title config
+    [params.header.title]
+      # URL of the LOGO
+      logo = ""
+      # title name
+      name = "Mind Palace"
+      # you can add extra information before the name (HTML format is supported), such as icons
+      pre = ""
+      # you can add extra information after the name (HTML format is supported), such as icons
+      post = ""
+      # DoIt NEW | 0.2.5 whether to use typeit animation for title name
+      typeit = true
+
+  # Footer config
+  [params.footer]
+    enable = true
+    # DoIt NEW | 0.2.0 Custom content (HTML format is supported)
+    custom = 'Made with love by Anshul'
+    # DoIt NEW | 0.2.0 whether to show Hugo and theme info
+    hugo = false
+    # DoIt NEW | 0.2.14 Hosted on (HTML format is supported)
+    # <a title="Github Pages" href="https://docs.github.com/en/pages/" target="_blank" rel="noopener noreffer">GitHub Pages</a>
+    hostedOn = '' 
+    # DoIt NEW | 0.2.0 whether to show copyright info
+    copyright = true
+    # DoIt NEW | 0.2.0 whether to show the author
+    author = true
+    # Site creation time
+    since = 2022
+    # ICP info only in China (HTML format is supported)
+    icp = ""
+    # license info (HTML format is supported)
+    #license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+
+ 
+
+
+
+
